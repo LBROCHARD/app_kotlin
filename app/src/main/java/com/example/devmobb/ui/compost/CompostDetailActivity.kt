@@ -20,12 +20,12 @@ class CompostDetailActivity : AppCompatActivity() {
         CompostDesignation.text = compost
 
         compostSelected?.let {compost ->
-            CompostDesignation.text = compost.designation
+            CompostDesignation.text = compost.lieu
 
             buttonOpen.setOnClickListener {
                 // Display a label at the location of Google's Sydney office
                 val gmmIntentUri =
-                    Uri.parse("geo:0,0?q=${compost.latitude},${compost.longitude}(${compost.designation})")
+                    Uri.parse("geo:0,0?q=${compost.latitude},${compost.longitude}(${compost.lieu}")
                 val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
                 mapIntent.setPackage("com.google.android.apps.maps")
                 startActivity(mapIntent)

@@ -65,15 +65,15 @@ class CompostMapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     if(compostSt.id == compost!!.id) {
                         mMap.addMarker(MarkerOptions()
                             .position(compostLocation)
-                            .title(compostSt.addresse + " "+compost.showDetails())
-                            .icon(BitmapFromVector(this, R.drawable.ic_baseline_monitor_heart_24))
+                            .title(compostSt.adresse) //+ " "+compost.showDetails())
+                            .icon(BitmapFromVector(this, R.drawable.ic_baseline_emoji_nature_24))
                         )
 
                     } else {
                         mMap.addMarker(MarkerOptions()
                             .position(compostLocation)
-                            .title(compostSt.addresse + " "+compostSt.showDetails()))
-                    }
+                            .title(compostSt.adresse) // + " "+compostSt.showDetails())
+                        )}
 
                 }
             }
@@ -87,10 +87,10 @@ class CompostMapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 )
             }
 
-            val defibrillatorLocation = LatLng(compost.latitude, compost.longitude)
+            val compostLocation = LatLng(compost.latitude, compost.longitude)
             //mMap.addMarker(MarkerOptions().position(locationStation).title(station.name))
             //mMap.moveCamera(CameraUpdateFactory.newLatLng(locationStation))
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(defibrillatorLocation, 18f))
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(compostLocation, 18f))
         }
 
     }

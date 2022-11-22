@@ -41,7 +41,7 @@ class CompostAdapter(private val composts:List<Compost>, private val context: Co
 
         holder.cardView.setOnClickListener {
             val intent = Intent(context, CompostMapsActivity::class.java)
-            intent.putExtra("compost", compost.designation)
+            intent.putExtra("compost", compost.lieu)
             compostSelected = compost
             context.startActivity(intent)
         }
